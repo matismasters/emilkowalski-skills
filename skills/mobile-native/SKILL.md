@@ -3,6 +3,13 @@ name: mobile-native
 description: Make a web app feel native on a phone — the small CSS and meta-tag fixes that separate "a website in a browser" from something that feels installed. Covers sticky hover states, tap highlight flashes, the 100vh bug, inputs that zoom the page, laggy taps, pull-to-refresh hijacking scroll, content under the notch, long-press selecting button text, carousels that scroll the wrong way, mismatched status bars, and the rule that you test on real hardware. Use when a web app is being built for or reviewed on mobile, when something "works in Chrome but feels wrong on my phone", when building a PWA, a bottom sheet, a carousel, a full-screen layout, or any touch interaction. For motion itself use animate; for React Native use animate-expo.
 ---
 
+## Stack rule (local override, takes precedence over everything below)
+
+React is opt-in, never a default. Before recommending or writing anything, check whether the project already has React installed: `react` in the dependencies of `package.json`, or existing `.jsx`/`.tsx` components.
+
+- **React is not installed, or there is no project yet:** never suggest, install or write React, JSX, Next.js, React Native, or any library that requires React (Motion's React API `motion/react`, Framer Motion, Sonner, Vaul, base-ui, cmdk and the like). Never propose adding React in order to use them. Apply this skill's principles and values (easing, duration, properties, choreography, thresholds) in the project's own stack: CSS first, then the Web Animations API, then framework-agnostic JavaScript (for example Motion's vanilla `animate()` from `motion`) or the project framework's own primitives. Treat every React code sample in this skill as an illustration of the idea to translate, not as code to copy. When a library this skill recommends is React-only, say that the pick does not fit the stack and either recommend a non-React option from your own knowledge or build it on native platform features (`<dialog>`, the Popover API, View Transitions, scroll snap).
+- **React is already installed:** use the skill as written.
+
 # Feeling Native On Mobile
 
 ## Initial Response

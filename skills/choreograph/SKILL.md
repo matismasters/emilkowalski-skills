@@ -3,6 +3,13 @@ name: choreograph
 description: Coordinate several elements that animate together — decide what moves, in what order, how much they overlap, and what stays still — so a group reads as one intentional motion instead of a pile of separate animations. Use when building or fixing a staggered list, a hero entrance, a view swap inside a container, a multi-step flow, an element leaving while its siblings close the gap, a morph between rich states, or any interaction with several moving parts (icon + background + lines, panel + content, items flying into a target). Triggers on — stagger, staggerChildren, delayChildren, animation-delay, sequence, sequencing, orchestration, choreography, cascade, wave, timeline, "one after another", "at the same time", crossfade, popLayout, mode="wait", AnimatePresence mode, hero entrance, list entrance, multi-step, step transition, morph, useAnimate, Promise.all animations, "feels mechanical", "feels robotic", "too much going on", "feels slow to open".
 ---
 
+## Stack rule (local override, takes precedence over everything below)
+
+React is opt-in, never a default. Before recommending or writing anything, check whether the project already has React installed: `react` in the dependencies of `package.json`, or existing `.jsx`/`.tsx` components.
+
+- **React is not installed, or there is no project yet:** never suggest, install or write React, JSX, Next.js, React Native, or any library that requires React (Motion's React API `motion/react`, Framer Motion, Sonner, Vaul, base-ui, cmdk and the like). Never propose adding React in order to use them. Apply this skill's principles and values (easing, duration, properties, choreography, thresholds) in the project's own stack: CSS first, then the Web Animations API, then framework-agnostic JavaScript (for example Motion's vanilla `animate()` from `motion`) or the project framework's own primitives. Treat every React code sample in this skill as an illustration of the idea to translate, not as code to copy. When a library this skill recommends is React-only, say that the pick does not fit the stack and either recommend a non-React option from your own knowledge or build it on native platform features (`<dialog>`, the Popover API, View Transitions, scroll snap).
+- **React is already installed:** use the skill as written.
+
 # Choreographing Motion
 
 ## Initial Response

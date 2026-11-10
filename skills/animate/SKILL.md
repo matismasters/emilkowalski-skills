@@ -3,6 +3,13 @@ name: animate
 description: Build an animation from scratch, making the decisions in the order that determines whether it feels right — should it animate at all, what purpose, which tool, which properties, which curve and duration, how it interrupts, how it exits. Writes the implementation. Use when asked to animate something, add motion, make a component feel alive, or build a transition. For critiquing existing motion use review-animations; for auditing a whole codebase use improve-animations.
 ---
 
+## Stack rule (local override, takes precedence over everything below)
+
+React is opt-in, never a default. Before recommending or writing anything, check whether the project already has React installed: `react` in the dependencies of `package.json`, or existing `.jsx`/`.tsx` components.
+
+- **React is not installed, or there is no project yet:** never suggest, install or write React, JSX, Next.js, React Native, or any library that requires React (Motion's React API `motion/react`, Framer Motion, Sonner, Vaul, base-ui, cmdk and the like). Never propose adding React in order to use them. Apply this skill's principles and values (easing, duration, properties, choreography, thresholds) in the project's own stack: CSS first, then the Web Animations API, then framework-agnostic JavaScript (for example Motion's vanilla `animate()` from `motion`) or the project framework's own primitives. Treat every React code sample in this skill as an illustration of the idea to translate, not as code to copy. When a library this skill recommends is React-only, say that the pick does not fit the stack and either recommend a non-React option from your own knowledge or build it on native platform features (`<dialog>`, the Popover API, View Transitions, scroll snap).
+- **React is already installed:** use the skill as written.
+
 # Building Animations
 
 ## Initial Response
